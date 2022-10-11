@@ -1,27 +1,19 @@
-import React,{ useState } from 'react';
+import React from 'react';
 import './App.css';
 import FunctionContextComponent from './FunctionContextComponent'
-import ClassContextComponent from './ClassContextComponent';
+import {ThemeProvider} from './ThemeContext'
 
-
-
-
-export const ThemeContext = React.createContext()
+//ThemeProvider is wrapping all of the logic for state 
+//and pushing 
+//different values to the children
 
 export default function App() {
-  const [darkTheme, setDarkTheme] = useState(true)
-
-  function toggleTheme() {
-    setDarkTheme(prevDarkTheme => !prevDarkTheme)
-  }
 
   return (
     <div className='App'>
-    <ThemeContext.Provider value={darkTheme}>
-      <button onClick={toggleTheme}>Toggle Theme</button>
+    <ThemeProvider>
       <FunctionContextComponent/>
-      <ClassContextComponent/>
-    </ThemeContext.Provider>
+    </ThemeProvider>
     </div>
   );
 }

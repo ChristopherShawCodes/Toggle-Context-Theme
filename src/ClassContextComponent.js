@@ -20,7 +20,7 @@ render() {
     return (
         <ThemeContext.Consumer>
             {darkTheme => {
-                return <div style={this.ThemeStyles(darkTheme)}>Class Theme</div>
+                return <div id="theme" style={this.ThemeStyles(darkTheme)}>Class Theme</div>
             }}
         </ThemeContext.Consumer>
     )
